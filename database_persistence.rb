@@ -3,7 +3,7 @@ require "pry"
 
 class DatabasePersistence
   def initialize(logger)
-    @db = PG.connect(dbname: "todos")
+    # @db = PG.connect(dbname: "todos")
 
     @db = if Sinatra::Base.production?
       PG.connect(ENV['DATABASE_URL'])
