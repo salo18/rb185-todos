@@ -50,7 +50,7 @@ class DatabasePersistence
   end
 
   def delete_list(id)
-    query("DELETE FROM todos WHERE list_id = $1", id)
+    query("DELETE FROM todo WHERE list_id = $1", id)
     query("DELETE FROM lists WHERE id = $1", id)
     # @session[:lists].reject! { |list| list[:id] == id }
   end
